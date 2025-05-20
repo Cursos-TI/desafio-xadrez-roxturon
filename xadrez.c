@@ -3,7 +3,7 @@
 int main(){
 
     // Declaração de variantes para While e Do
-    int torre=0, rainha=0;
+    int torre=0, rainha=0, cavalo=1;
 
     printf("\n");
     //While para representar movimento da torre, indicando até um valor de 5 repetições.
@@ -28,6 +28,24 @@ int main(){
         printf("Bispo: Cima.\n");
         printf("Bispo: Direita.\n");
     }
+
+    printf("\n");
+
+    do
+    {
+        
+        for (int i = 0; i < 2; i++)
+        {
+            printf("Cima.\n");
+        }
+        printf("Esquerda.\n");
+        cavalo++;
+
+    } while (cavalo<2);
+    
+    
+    
+    
     
 
     return 0;
