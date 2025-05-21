@@ -1,52 +1,57 @@
 #include <stdio.h>
 
-int main(){
+void Torre(int casasTorre){
 
-    // Declaração de variantes para While e Do
-    int torre=0, rainha=0, cavalo=1;
-
-    printf("\n");
-    //While para representar movimento da torre, indicando até um valor de 5 repetições.
-    while (torre <5)
+    if (casasTorre>0)
     {
-        printf("Torre: Direita.\n");
-        torre++;
-    }
-    printf("\n");
+        printf("Direita.\n");
+        Torre(casasTorre-1);
+    }   
+}
 
-    //Do para representar movimento da Rainha, indicando até um valor de 8 repetições.
-    do
-    {
-        rainha++;
-        printf("Rainha: esquerda.\n");
-    } while (rainha<8);
-    printf("\n");
-    
-    //For para representar movimento do Bispo, indicando até um valor de 5 repetições e imprimindo duas direções para cada repetição.
-    for (int bispo = 0; bispo < 5; bispo++)
-    {
-        printf("Bispo: Cima.\n");
-        printf("Bispo: Direita.\n");
-    }
+void Rainha(int casasRainha){
 
-    printf("\n");
-
-    do
+    if (casasRainha>0)
     {
-        
-        for (int i = 0; i < 2; i++)
-        {
-            printf("Cima.\n");
-        }
         printf("Esquerda.\n");
-        cavalo++;
+        Rainha(casasRainha-1);
+    }
+}
 
-    } while (cavalo<2);
+void Bispo(int casasBispo){
+
+    if (casasBispo>0)
+    {
+        printf("Cima.\n");
+        printf("Direita.\n");
+        Bispo(casasBispo-1);
+    }
+}
+
+void Cavalo(int casasCavalo){
     
+    if (casasCavalo>0 )
+    {
+        printf("Cima.\n");
+        Cavalo(casasCavalo-1);
+        
+    }else{
+        printf("Direita.\n");   
     
-    
-    
-    
+    }
+}
+
+
+int main(){
+    Torre(5);
+    printf("\n");
+    Rainha(8);
+    printf("\n");
+    Bispo(5);
+    printf("\n");
+    Cavalo(2);
+    printf("\n");
+
 
     return 0;
 }
